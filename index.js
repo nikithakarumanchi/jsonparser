@@ -50,7 +50,7 @@ app.post('/streamjson', (req, res) => {
  **/
 app.get('/loggerget', (req, res) => {
   const level = req.query.level;
-  if (level == info) {
+  if (level == 'info') {
     logger.info('Basic Logger');
   }
   else {
