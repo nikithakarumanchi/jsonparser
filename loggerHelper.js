@@ -1,8 +1,5 @@
 const crypto = require('crypto');
 const httpContext = require('express-http-context');
-const express = require('express');
-const res = require('express/lib/response');
-
 
 class Logger {
   constructor(app, name, logCacheSize) {
@@ -22,7 +19,7 @@ class Logger {
     const output = `${new Date().toISOString().replace('T', ' ').split('.')[0]} :: requestId :: ${requestId} :: Logger :: ${this.name} :: Level :: ${level} :: Message :: ${message}`;
     if (level == 'info') {
       this.logCache.push(output);
-    } else if (level = 'warn') {
+    } else if (level == 'warn') {
       console.warn(output,error);
     } else {
       console.error(output,error);
